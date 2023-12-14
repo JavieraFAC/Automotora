@@ -5,8 +5,8 @@ import java.util.ArrayList;
 
 public class AutomotoraData {
     
-    private ArrayList<ClienteOb> listaCliente;
-    private ArrayList<VendedorOb> listaVendedor;
+    public ArrayList<ClienteOb> listaCliente;
+    public ArrayList<VendedorOb> listaVendedor;
    // private ArrayList<Prestamo> listaPrestamo;
 
     public AutomotoraData() {

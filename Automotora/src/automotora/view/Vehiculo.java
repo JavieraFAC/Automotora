@@ -221,20 +221,24 @@ public class Vehiculo extends javax.swing.JPanel {
 
                 ClienteOb clienteBusca = new ClienteOb();
                 clienteBusca.setRun(jTextFieldRunV.getText());
+                System.out.println(jTextFieldRunV.getText());
         
-                AutomotoraData datos = new AutomotoraData();
+               
       
-            boolean flag = datos.existeCliente(jTextFieldRunV.getText());
-            if (flag== true){
+            boolean flag = this.datoslocal.existeCliente(jTextFieldRunV.getText());
+            if (flag == true){
+                JOptionPane.showMessageDialog(null,"Cliente Existe" + clienteBusca.getRun());
                 
                 Automovil autoNuevo = new Automovil();
                 autoNuevo.setPatente(jTextFieldPatente.getText());
                 autoNuevo.setNummotor(jTextFieldNumMotor.getText());
                 autoNuevo.setMarca(jTextFieldMarca.getText());
                 autoNuevo.setModelo(jTextFieldModelo.getText());
-                autoNuevo.setAnno(Integer.valueOf(jTextFieldAnno.getText()));
+                autoNuevo.setAnno(Integer.parseInt(jTextFieldAnno.getText()));
                 autoNuevo.setTipoCombustible(jTextFieldCombustible.getText());
                 
+                // clienteBusca.agregarAutomovil(autoNuevo);     
+   
 
             }else{
                 JOptionPane.showMessageDialog(null, "Cliente no esta registrado "+clienteBusca.getRun());

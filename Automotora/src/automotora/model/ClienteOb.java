@@ -26,6 +26,10 @@ public class ClienteOb {
     public ClienteOb() {
         this.automovil = new ArrayList<Automovil>();
     }
+    
+    public boolean agregarAutomovil(Automovil autoNuevo){
+        return this.automovil.add(autoNuevo);
+    }
 
     public ClienteOb(String run, String nombre, String apellidos, int telefono, String direccion, String correo, Date fechaNac) {
         this.run = run;

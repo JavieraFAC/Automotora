@@ -256,21 +256,20 @@ public class Cliente extends javax.swing.JPanel {
 
         } else {
             // Agregar Cliente
-             ClienteOb nuevoCliente = new ClienteOb();
- 
-        nuevoCliente.setRun(jTextFieldRunC.getText());
-        nuevoCliente.setNombre(jTextFieldNombreC.getText());
-        nuevoCliente.setApellidos(jTextFieldApellidosC.getText());
-        nuevoCliente.setTelefono(Integer.parseInt(jTextFieldTelefonoC.getText()));
-        nuevoCliente.setDireccion(jTextFieldDireccionC.getText());
-        nuevoCliente.setCorreo(jTextFieldCorreoC.getText());
-        
-        // nuevoCliente.setFechaNac(jTextFieldFNac.getText());
-        AutomotoraData datos = new AutomotoraData();
-        datos.agregarCliente(nuevoCliente);
- 
-        JOptionPane.showMessageDialog(null, "Se agregó Cliente nuevo:  " + nuevoCliente.getNombre());
-             
+            ClienteOb nuevoCliente = new ClienteOb();
+            nuevoCliente.setRun(jTextFieldRunC.getText());
+            nuevoCliente.setNombre(jTextFieldNombreC.getText());
+            nuevoCliente.setApellidos(jTextFieldApellidosC.getText());
+            nuevoCliente.setTelefono(Integer.parseInt(jTextFieldTelefonoC.getText()));
+            nuevoCliente.setDireccion(jTextFieldDireccionC.getText());
+            nuevoCliente.setCorreo(jTextFieldCorreoC.getText());
+            // nuevoCliente.setFechaNac(jTextFieldFNac.getText());
+            
+            this.datoslocal.agregarCliente(nuevoCliente);
+
+            JOptionPane.showMessageDialog(null, "Se agregó Cliente nuevo:  " + nuevoCliente.getNombre());
+            
+
         }
     }//GEN-LAST:event_AgregarClienteActionPerformed
 

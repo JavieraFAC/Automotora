@@ -212,7 +212,7 @@ public class Vendedor extends javax.swing.JPanel {
         nuevoVendedor.setDireccionV(jTextFieldDireccionV.getText());
         nuevoVendedor.setCorreo(jTextFieldCorreoV.getText());
        
-        JOptionPane.showMessageDialog(null, "Se agregó Cliente nuevo:  " + nuevoVendedor.getNombreV());
+        JOptionPane.showMessageDialog(null, "Se agregó Vendedor nuevo:  " + nuevoVendedor.getNombreV());
             
         }
     }//GEN-LAST:event_AgregarVendedorActionPerformed
