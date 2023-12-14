@@ -30,6 +30,7 @@ public class AutomotoraData {
     public boolean existeCliente(String run){
         for (ClienteOb clienteActual : this.listaCliente) {
             if (clienteActual.getRun().equals(run)) {
+                return true;
             }
         }
         return false;
@@ -38,6 +39,7 @@ public class AutomotoraData {
         public boolean existeVendedor(String runV){
         for (VendedorOb vendedorActual : this.listaVendedor) {
             if (vendedorActual.getRunV().equals(runV)) {
+                return true;
             }
         }
         return false;

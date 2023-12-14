@@ -213,21 +213,22 @@ public class Vehiculo extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void AgregarVehiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarVehiculoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_AgregarVehiculoActionPerformed
-
-    private void BuscarDuennoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarDuennoActionPerformed
+        // tirar por pantalla
+        System.out.println("Patente : ");
+        System.out.println("Numero Motor: ");
+        System.out.println("Marca : ");
+        System.out.println("Modelo : ");
+        System.out.println("Año : ");
+        System.out.println("Tipo Combustible: ");
         
-
+        
+        if (jTextFieldPatente.getText().isEmpty()
+                || jTextFieldNumMotor.getText().isEmpty()
+                || jTextFieldMarca.getText().isEmpty()
+                || jTextFieldAnno.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Se deben rellenar los datos obligatorios", "error", JOptionPane.ERROR_MESSAGE);
+        }else {
                 ClienteOb clienteBusca = new ClienteOb();
-                clienteBusca.setRun(jTextFieldRunV.getText());
-                System.out.println(jTextFieldRunV.getText());
-        
-               
-      
-            boolean flag = this.datoslocal.existeCliente(jTextFieldRunV.getText());
-            if (flag == true){
-                JOptionPane.showMessageDialog(null,"Cliente Existe" + clienteBusca.getRun());
                 
                 Automovil autoNuevo = new Automovil();
                 autoNuevo.setPatente(jTextFieldPatente.getText());
@@ -236,12 +237,30 @@ public class Vehiculo extends javax.swing.JPanel {
                 autoNuevo.setModelo(jTextFieldModelo.getText());
                 autoNuevo.setAnno(Integer.parseInt(jTextFieldAnno.getText()));
                 autoNuevo.setTipoCombustible(jTextFieldCombustible.getText());
-                
-                // clienteBusca.agregarAutomovil(autoNuevo);     
-   
+               
+                 clienteBusca.agregarAutomovil(autoNuevo);
+                 JOptionPane.showMessageDialog(null, "Se agregó Vehiculo nuevo");
+    }   
+    }//GEN-LAST:event_AgregarVehiculoActionPerformed
+
+    private void BuscarDuennoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarDuennoActionPerformed
+        
+
+                ClienteOb clienteBusca = new ClienteOb();
+                clienteBusca.setRun(jTextFieldRunV.getText());
+                System.out.println(jTextFieldRunV.getText());
+                this.AgregarVehiculo.setVisible(false);
+        
+               
+      
+            boolean flag = this.datoslocal.existeCliente(jTextFieldRunV.getText());
+            if (flag == true){
+                JOptionPane.showMessageDialog(null,"Cliente Existe" + clienteBusca.getRun());
+                this.AgregarVehiculo.setVisible(true);
 
             }else{
                 JOptionPane.showMessageDialog(null, "Cliente no esta registrado "+clienteBusca.getRun());
+                this.AgregarVehiculo.setVisible(false);
             }
 
     }//GEN-LAST:event_BuscarDuennoActionPerformed
